@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="creator" content="Zidan Khulul Sajid" >
+    <title>ZeachAI Blog</title>
+</head>
+<style>
+    @font-face {
+    font-family: 'Geist Mono';
+    src: url('./../assets/GeistMono-Regular.otf') format('opentype');
+}
+
+.button-content-href {
+    border-radius: 10px;
+}
+
+.banner {
+    border-radius: 10px;
+}
+
+
+:root {
+    --primary: #181C14;
+    --primary-dark: #181C14;
+    --secondary: #3C3D37;
+    --background: #f3f4f6;
+    --text: #1f2937;
+    --text-light: #6b7280;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Geist Mono';
+    line-height: 1.5;
+    color: var(--text);
+    background-color: var(--background);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--primary);
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+}
+main {
+    padding: 3rem 0;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+.blog-post {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.blog-post-image {
+    height: 200px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+}
+.blog-post-content {
+    padding: 1.5rem;
+}
+.blog-post h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+.blog-post-meta {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+.blog-post p {
+    margin-bottom: 1rem;
+}
+.read-more {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.read-more:hover {
+    background-color: var(--primary-dark);
+}
+aside {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+aside h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+.popular-posts {
+    list-style-type: none;
+}
+.popular-posts li {
+    margin-bottom: 1rem;
+}
+.popular-posts a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.popular-posts a:hover {
+    color: var(--primary-dark);
+}
+.newsletter {
+    margin-top: 2rem;
+}
+.newsletter h3 {
+    margin-bottom: 0.5rem;
+}
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+}
+
+button {
+    border-radius: 10px;
+}
+
+.newsletter-form button {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.newsletter-form button:hover {
+    background-color: #059669;
+}
+footer {
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+.social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary);
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">ZeachAI</a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <section class="blog-posts" id="blog-posts">
+                <!-- Blog posts will be dynamically inserted here -->
+            </section>
+<aside>
+    <img class="banner" src="https://picsum.photos/300/200" alt="Random image from Picsum">
+    <h3>Popular Posts</h3>
+    <ul class="popular-posts">
+        <li><a href="#">10 Must-Have SaaS Tools for Startups</a></li>
+        <li><a href="#">How AI is Revolutionizing Customer Support</a></li>
+        <li><a href="#">The Rise of No-Code Platforms in SaaS</a></li>
+        <li><a href="#">Scaling Your SaaS: From MVP to Enterprise</a></li>
+        <li><a href="#">The Future of Work: Remote Teams and SaaS</a></li>
+        <li><a href="#">The Role of AI in Cybersecurity</a></li>
+        <li><a href="#">The Future of SaaS: Trends to Watch in 2024</a></li>
+    </ul>
+    <div class="newsletter">
+        <h3>Subscribe to Our Newsletter</h3>
+        <p>Stay updated with our latest insights and news.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 zydnrbrn. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Twitter">📱</a>
+                <a href="#" aria-label="LinkedIn">💼</a>
+                <a href="#" aria-label="GitHub">🐙</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Newsletter form submission (prevent default for demo)
+    const newsletterForm = document.querySelector('.newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for subscribing!');
+        newsletterForm.reset();
+    });
+
+     // Blog posts data
+    const blogPosts = [
+        {
+            title: "Revolutionizing Productivity with AI-Powered SaaS",
+            date: "September 22, 2024",
+            author: "John Doe",
+            content: "Discover how our cutting-edge AI algorithms are transforming the way teams collaborate and boost productivity in the modern workplace.",
+            image: "https://picsum.photos/id/1015/800/400",
+            link: "#"
+        },
+        {
+            title: "The Future of Cloud-Native Applications",
+            date: "September 15, 2024",
+            author: "Jane Smith",
+            content: "Explore the latest trends in cloud-native development and how they're shaping the future of scalable, resilient software solutions.",
+            image: "https://picsum.photos/id/1016/800/400",
+            link: "#"
+        },
+        {
+            title: "Securing Your SaaS: Best Practices for 2024",
+            date: "September 8, 2024",
+            author: "Alex Johnson",
+            content: "Learn about the latest cybersecurity threats facing SaaS companies and how to implement robust security measures to protect your data.",
+            image: "https://picsum.photos/id/1018/800/400",
+            link: "#"
+        },
+        {
+            title: "AI and Machine Learning: Transforming the Future",
+            date: "September 1, 2024",
+            author: "Emily Davis",
+            content: "Delve into the world of AI and machine learning and discover how these technologies are revolutionizing various industries.",
+            image: "https://picsum.photos/id/1020/800/400",
+            link: "#"
+        },
+        {
+            title: "The Rise of Remote Work: Tools and Strategies",
+            date: "August 25, 2024",
+            author: "Michael Brown",
+            content: "Learn about the tools and strategies that are making remote work more efficient and productive than ever before.",
+            image: "https://picsum.photos/id/1021/800/400",
+            link: "#"
+        }
+    ];
+
+    // Function to create blog post HTML
+    const createBlogPostHTML = (post) => {
+        return `
+            <article class="blog-post">
+                <div class="blog-post-image" style="background-image: url('${post.image}');"></div>
+                <div class="blog-post-content">
+                    <h2>${post.title}</h2>
+                    <div class="blog-post-meta">Published on ${post.date} by ${post.author}</div>
+                    <p>${post.content}</p>
+                    <a href="${post.link}" class="read-more">Read More</a>
+                </div>
+            </article>
+        `;
+    };
+
+    // Insert blog posts into the DOM
+    const blogPostsContainer = document.getElementById('blog-posts');
+    blogPosts.forEach(post => {
+        blogPostsContainer.innerHTML += createBlogPostHTML(post);
+    });
+});
+
+    </script>
+</body>
+</html>
